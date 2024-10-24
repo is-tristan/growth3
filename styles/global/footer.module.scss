@@ -1,0 +1,75 @@
+.footer {
+    background: var(--primary);
+}
+
+.footerWrapper {
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    text-align: center;
+    gap: 1.5rem;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+        gap: 3rem;
+    }
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--font-prophet);
+    transition: var(--cubicAlt);
+
+    @media (min-width: 1200px) {
+        font-size: 3rem;
+    }
+
+    sup {
+        color: var(--dark);
+    }
+}
+
+.links {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    gap: 1.5rem;
+    color: var(--dark);
+
+    @media (min-width: 1200px) {
+        justify-content: flex-end;
+    }
+
+    .policies {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        color: var(--dark);
+
+        @media (min-width: 1200px) {
+            justify-content: flex-end;
+        }
+    }
+
+    .footerSocialIcons {
+        display: flex;
+        justify-content: center;
+
+        @media (min-width: 1200px) {
+            justify-content: flex-end;
+        }
+
+        svg {
+            fill: var(--dark);
+
+            &:hover {
+                fill: var(--altDark);
+            }
+        }
+    }
+}

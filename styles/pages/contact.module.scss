@@ -1,0 +1,95 @@
+// contact.module.scss
+
+.contactRow {
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    margin: 5rem auto;
+}
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    max-width: 50rem;
+    margin: 0 auto;
+    text-align: center;
+
+    p {
+        margin: 0 auto;
+    }
+}
+
+.contactInfo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 5rem;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.contactBox {
+    flex-basis: calc(50% - 3rem);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 5rem 3rem;
+    border: 1.5px solid var(--lightAlt);
+    border-radius: 2rem;
+    text-align: center;
+    transition: var(--cubic);
+
+    @media (min-width: 768px) {
+        text-align: left;
+    }
+
+    &:hover {
+        transform: translateY(-.2rem);
+        background: var(--darkAlt);
+    }
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 6rem;
+        height: 6rem;
+        border-radius: 50%;
+        border: 1.5px solid var(--lightAlt);
+
+        svg {
+            fill: var(--primary);
+            width: 2rem;
+            height: 2rem;
+        }
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+
+        p {
+            font-size: 1rem;
+        }
+
+        a {
+            font-size: 1.5rem;
+            font-weight: 700;
+            width: fit-content;
+        }
+    }
+
+}

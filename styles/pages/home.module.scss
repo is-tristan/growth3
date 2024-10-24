@@ -1,0 +1,52 @@
+// Banner
+.homeBanner {
+    min-height: 85vh;
+
+    @media (min-width: 1200px) {
+        min-height: calc(100vh - 3rem);
+    }
+
+    .coverLottie {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 200vw;
+        height: 100vh;
+        opacity: .5;
+        object-fit: cover;
+        object-position: center;
+        transform: rotate(90deg) translateY(25%);
+
+        @media (min-width: 768px) {
+            transform: rotate(0);
+            width: 100vw;
+        }
+    }
+
+}
+
+
+// Marquee
+.dualMarquee {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -3rem;
+    margin-bottom: -3rem;
+    height: 15rem;
+    transform: scale(1.1);
+}
+
+// Counter
+.counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    h2 {
+        transition: all .5s ease;
+    }
+}

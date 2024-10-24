@@ -1,0 +1,40 @@
+// ========== Slider Arrows ========== //
+.keenArrow {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    z-index: 1;
+    margin: auto 0;
+    top: 0;
+    bottom: 0;
+    border: 1.5px solid var(--lightAlt);
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: var(--ease);
+
+    @media (min-width: 1200px) {
+        display: flex;
+    }
+  
+    svg {
+      transition: var(--ease);
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  
+    &:hover {
+      background: var(--primary);
+    }
+  }
+  
+  .keenPrev {
+    left: 0;
+  }
+  
+  .keenNext {
+    right: 0;
+  }
+  

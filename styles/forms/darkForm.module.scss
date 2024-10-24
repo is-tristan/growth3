@@ -1,0 +1,42 @@
+.dark {
+    .field {
+
+        input,
+        textarea {
+            border-color: var(--lightAlt);
+            color: var(--lightAlt);
+
+            &:focus,
+            &:active {
+                border-color: var(--primary);
+            }
+        }
+    }
+
+    .submit {
+        background: transparent;
+        color: var(--lightAlt);
+        border-color: var(--lightAlt);
+        transition: var(--cubicAlt);
+
+        &::before {
+            top: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: var(--lightAlt);
+            transition: var(--cubicAlt);
+        }
+
+        &:hover {
+            color: var(--dark);
+
+            &::before {
+                height: 100%;
+                top: unset;
+                bottom: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,713 @@
+// app/global.scss
+:root {
+  --primary: #0BDA7A;
+  --dark: #0E141B;
+  --darkAlt: #040608;
+  --light: #ffffff;
+  --lightAlt: #EAEAEA;
+  --cubic: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  --cubicAlt: all .5s cubic-bezier(0.215, 0.610, 0.355, 1);
+  ;
+  --ease: all .5s ease;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--lightAlt);
+  background: var(--dark);
+  font-family: var(--font-sora), Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// ========== Typography ========== //
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-prophet);
+  line-height: 100%;
+  letter-spacing: -0.035em;
+}
+
+h1 {
+  font-size: 3.25rem;
+
+  @media (min-width: 768px) {
+    font-size: 4rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 5rem;
+  }
+
+  @media (min-width: 1500px) {
+    font-size: 6rem;
+  }
+}
+
+h2 {
+  font-size: 2.5rem;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 4rem;
+  }
+
+  @media (min-width: 1500px) {
+    font-size: 5rem;
+  }
+}
+
+h3 {
+  font-size: 2rem;
+
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 1500px) {
+    font-size: 4rem;
+  }
+}
+
+h4 {
+  font-size: 1.75rem;
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+  }
+
+}
+
+h5 {
+  font-size: 1.5rem;
+
+}
+
+h6 {
+  font-size: 1.25rem;
+}
+
+
+p {
+  font-family: var(--font-sora);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 160%;
+
+  @media (min-width: 1200px) {
+    font-size: 1.2rem;
+  }
+}
+
+sup {
+  color: var(--primary);
+}
+
+.smaller {
+  p {
+    font-size: .875rem;
+  }
+}
+
+.link {
+  position: relative;
+  padding-bottom: 1px;
+  transition: var(--cubicAlt);
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--light);
+    transition: var(--cubicAlt);
+  }
+
+  &:hover {
+    opacity: .85;
+
+    &::before {
+      width: 0;
+      right: 0;
+      left: unset;
+    }
+  }
+}
+
+
+ul,
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem 1rem 0;
+  font-size: 1rem;
+  list-style: square;
+
+  li {
+      font-weight: 500;
+
+      &::marker {
+        color: var(--primary);
+      }
+  }
+}
+
+// ========== Colours ========== //
+.green {
+  color: var(--primary);
+}
+
+// ========== Hamburger ========== //
+.toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 3px;
+  background: var(--lightAlt);
+
+  @media (min-width: 768px) {
+    width: 42px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    background: var(--lightAlt);
+  }
+
+  &::before {
+    top: 0;
+    width: 48px;
+
+    @media (min-width: 768px) {
+      width: 56px;
+    }
+  }
+
+  &::after {
+    bottom: 0;
+    width: 24px;
+
+    @media (min-width: 768px) {
+      width: 32px;
+    }
+  }
+}
+
+
+// ========== Layouts ========== //
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.row.flexC {
+  flex-direction: column;
+}
+
+// Wrappers
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1512px;
+  height: auto;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+
+  @media (min-width: 768px) {
+    padding: 5rem 2.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    padding: 8rem 3rem;
+    gap: 5rem;
+  }
+
+  @media (min-width: 1500px) {
+    gap: 8rem;
+    padding: 8rem 5rem;
+  }
+}
+
+// Centered
+.centered {
+  @media (min-width: 768px) {
+    justify-content: center;
+    align-items: center;
+
+    .wrapper {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .heading {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+}
+
+// Headings
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    gap: 3rem;
+  }
+}
+
+.heading.centered {
+  @media (min-width: 768px) {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+// Banners
+.banner {
+  min-height: calc(100vh - 3rem);
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 50%, #192430, #161f2a, #131a23, #0f161d, #0c1218, #0b0f15, #090c12, #07090d);
+
+  .wrapper {
+    gap: 3rem;
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+
+    @media (min-width: 1200px) {
+      gap: 5rem;
+    }
+  }
+
+  .heading {
+    max-width: 1080px;
+
+    p {
+      max-width: 40rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+
+      @media (min-width: 1200px) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+// Small Banner
+.smallBanner {
+  background: var(--darkAlt);
+  padding-top: 3rem;
+}
+
+// ========== Buttons ========== //
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: .5rem;
+  width: auto;
+  height: auto;
+  padding: 1rem 1.5rem;
+  border-radius: .5rem;
+  border: 1.5px solid transparent;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: 1;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--cubic);
+
+  @media (min-width: 768px) {
+    padding: 1.25rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  span,
+  svg {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+  }
+
+}
+
+.btn.fGreen {
+  background: var(--primary);
+  color: var(--dark);
+  border-color: var(--primary);
+
+  &:hover {
+    transform: translateY(-.33rem);
+  }
+}
+
+.btn.tLight {
+  background: transparent;
+  color: var(--lightAlt);
+  border-color: var(--lightAlt);
+  transition: var(--cubicAlt);
+
+  &::before {
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: var(--lightAlt);
+    transition: var(--cubicAlt);
+  }
+
+  &:hover {
+    color: var(--dark);
+
+    &::before {
+      height: 100%;
+      top: unset;
+      bottom: 0;
+    }
+  }
+}
+
+// ========== Multi Columns & Cols ========== //
+.dualCols,
+.tripCols {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: auto;
+  flex-basis: calc(50% - 3rem);
+}
+
+.imageCol {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  min-height: 256px;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    min-height: 384px;
+  }
+
+  @media (min-width: 1200px) {
+    min-height: 0;
+  }
+
+  img {
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.tripCols {
+  .col {
+    flex-basis: calc(33.33% - 3rem);
+  }
+}
+
+// ========== Heading Overlaps ========== //
+.leftOverlap {
+  position: relative;
+  z-index: 1;
+
+  @media (min-width: 1200px) {
+    margin-left: -10rem;
+  }
+
+  @media (min-width: 1500px) {
+    margin-left: -15rem;
+  }
+}
+
+// ========== CTA's ========== //
+.cta {
+  max-width: 1140px;
+  margin: 0 auto;
+  background: var(--darkAlt);
+  border: 6px solid var(--primary);
+  border-radius: 5rem;
+
+  h2 {
+    @media (max-width: 1200px) {
+      font-size: 3rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    border-width: 10px;
+  }
+}
+
+// ========== Counters ========== //
+.counters {
+  background: radial-gradient(circle at 50% 50%, #192430, #161f2a, #131a23, #0f161d, #0c1218, #0b0f15, #090c12, #07090d);
+  margin: 1.5rem auto;
+  width: 90%;
+
+  @media (min-width: 768px) {
+    margin: 3rem auto;
+    width: 100%;
+  }
+}
+
+// ========== Full Screen Slider ========== //
+.fsSlider {
+  padding: 3rem 1.5rem;
+  margin: 0 auto;
+
+  @media (min-width: 1200px) {
+    padding: 6rem 1.5rem;
+  }
+
+  .heading {
+    max-width: 45rem;
+    margin: 0 auto 3rem;
+
+    @media (min-width: 1200px) {
+      margin: 0 auto 5rem;
+      text-align: center;
+    }
+  }
+}
+
+// ========== Forms ========== //
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 576px;
+  font-family: var(--sora);
+
+  .field {
+    display: flex;
+    padding: 0;
+    margin: 0;
+
+    input,
+    textarea {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 1rem;
+      border: 1.5px solid var(--darkAlt);
+      background: transparent;
+      border-radius: .5rem;
+      font-family: var(--sora);
+      font-weight: 500;
+      line-height: 1;
+      color: var(--dark);
+    }
+
+    textarea {
+      min-height: 10rem;
+    }
+  }
+}
+
+// ========== Marquees ========== //
+.marquee {
+  white-space: nowrap;
+  width: 125%;
+  height: fit-content;
+  padding: 0;
+  overflow-x: hidden;
+  color: var(--dark);
+
+  .marqueeWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+    padding: 3rem 0;
+    transform-origin: 0% 50%;
+    animation-name: marquee;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: 10s;
+
+    @media (min-width: 768px) {
+      animation-duration: 30s;
+    }
+
+    @media (min-width: 768px) {
+      gap: 3rem;
+    }
+
+    @media (min-width: 1200px) {
+      gap: 4rem;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-110%);
+      }
+    }
+
+    @keyframes marqueeReverse {
+      0% {
+        transform: translateX(0%);
+      }
+
+      100% {
+        transform: translateX(-110%);
+      }
+    }
+  }
+
+  h3 {
+    white-space: nowrap;
+    color: inherit;
+
+    @media (max-width: 1200px) {
+      font-size: 2rem;
+    }
+  }
+
+  .cross {
+    color: var(--primary);
+    white-space: nowrap;
+  }
+
+}
+
+// Light Background
+.bLight {
+  background: var(--light);
+
+  h3 {
+    color: var(--dark);
+  }
+}
+
+// Green Background
+.bGreen {
+  background: var(--primary);
+  color: var();
+
+  .light {
+    color: var(--light);
+  }
+}
+
+// Dark Background
+.bDark {
+  background: #19232F;
+  color: var(--light);
+}
+
+// titled 
+.tilted {
+  position: absolute;
+  margin: auto;
+  inset: 0;
+}
+
+// Titled Right
+.tRight {
+  transform: rotate(-12deg);
+
+  @media (min-width: 768px) {
+    transform: rotate(-6.5deg);
+  }
+
+  .marqueeWrapper {
+    animation-name: marqueeReverse;
+    animation-direction: reverse;
+  }
+}
+
+// Titled Left
+.tLeft {
+  transform: rotate(12deg);
+
+  @media (min-width: 768px) {
+    transform: rotate(6.5deg);
+  }
+}

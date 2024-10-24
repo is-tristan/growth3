@@ -1,0 +1,17 @@
+.socialIcons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    svg {
+        width: 1.75rem;
+        height: 1.75rem;
+        fill: var(--lightAlt);
+        transition: var(--ease);
+
+        &:hover {
+            fill: var(--primary);
+            transform: translateY(-.2rem);
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "growth3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.11.8",
+    "@carbon/icons-react": "^11.51.0",
+    "graphql": "^16.9.0",
+    "keen-slider": "^6.8.6",
+    "lottie-react": "^2.4.0",
+    "next": "14.2.15",
+    "nodemailer": "^6.9.15",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-slick": "^0.30.2",
+    "slick-carousel": "^1.8.1"
+  },
+  "devDependencies": {
+    "sass": "^1.80.3"
+  }
+}

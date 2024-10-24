@@ -1,0 +1,45 @@
+.topbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background: var(--primary);
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 150%;
+    text-align: center;
+    color: var(--dark);
+
+    @media (min-width: 768px) {
+        font-size: 1rem;
+        line-height: 1;
+    }
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1512px;
+    margin: 0 auto;
+    padding: .875rem 1.5rem;
+
+    @media (min-width: 768px) {
+        padding: .875rem 2.5rem;
+    }
+
+    @media (min-width: 1200px) {
+        padding: .875rem 3rem;
+    }
+
+    @media (min-width: 1500px) {
+        padding: .875rem 5rem;
+    }
+
+    p {
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        text-align: inherit;
+        color: inherit;
+    }
+}
