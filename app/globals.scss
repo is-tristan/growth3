@@ -700,6 +700,7 @@ ol {
   .marqueeWrapper {
     animation-name: marqueeReverse;
     animation-direction: reverse;
+    animation-delay: -10s;
   }
 }
 
