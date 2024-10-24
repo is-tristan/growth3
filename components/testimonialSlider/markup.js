@@ -130,6 +130,7 @@ export default function TestimonialSlider({ testimonialItems }) {
       {testimonialItems.map((_, idx) => (
         
         <button
+          aria-label="Navigation for testimonials"
           key={idx}
           className={`${dotStyles.dot} ${
             currentSlide === idx ? dotStyles.active : ""

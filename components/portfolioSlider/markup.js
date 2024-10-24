@@ -93,6 +93,7 @@ export default function PortfolioSlider({ portfolioItems }) {
         {portfolioItems.map((_, idx) => (
           
           <button
+            aria-label="Navigation for portfolio"
             key={idx}
             className={`${dotStyles.dot} ${
               currentSlide === idx ? dotStyles.active : ""

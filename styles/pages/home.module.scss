@@ -1,6 +1,7 @@
 // Banner
 .homeBanner {
     min-height: 85vh;
+    position: relative;
 
     @media (min-width: 1200px) {
         min-height: calc(100vh - 3rem);
@@ -20,6 +21,11 @@
         @media (min-width: 768px) {
             transform: rotate(0);
             width: 100vw;
+        }
+
+        @media (min-width: 1600px) {
+            width: 150vw;
+            margin-left: -25vw;
         }
     }
 
