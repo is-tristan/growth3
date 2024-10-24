@@ -1,9 +1,9 @@
-"use client"
+"use client";
 import { useState } from 'react';
 import styles from "@/styles/forms/darkForm.module.scss";
+import Link from 'next/link';
 
 const ContactForm = () => {
-
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +11,7 @@ const ContactForm = () => {
   });
 
   const [status, setStatus] = useState('');
+  const [isSending, setIsSending] = useState(false); // New state to manage sending status
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,8 +20,9 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSending(true);
     setStatus('Sending...');
-  
+
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -29,7 +31,7 @@ const ContactForm = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (res.ok) {
         setStatus('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });
@@ -38,17 +40,18 @@ const ContactForm = () => {
       }
     } catch (error) {
       setStatus('Something went wrong. Please try again.');
+    } finally {
+      setIsSending(false);
     }
   };
 
   return (
-
     <form onSubmit={handleSubmit} className={`form ${styles.dark}`}>
-
+      
       <div className={`field ${styles.field}`}>
-
         <input
-          aria-label="Your First Name"
+          aria-label="Your first name"
+          id="name"
           type="text"
           name="name"
           placeholder="First Name*"
@@ -62,7 +65,8 @@ const ContactForm = () => {
       <div className={`field ${styles.field}`}>
 
         <input
-          aria-label="Your Email Address"
+          aria-label="Your email address"
+          id="email"
           type="email"
           name="email"
           placeholder="Email Address*"
@@ -76,7 +80,8 @@ const ContactForm = () => {
       <div className={`field ${styles.field}`}>
 
         <textarea
-          aria-label="Type your message here"
+          aria-label="Your message"
+          id="message"
           name="message"
           placeholder="Message*"
           value={formData.message}
@@ -86,18 +91,33 @@ const ContactForm = () => {
 
       </div> {/* .field */}
 
-      <button className={`btn ${styles.submit}`} type="submit">
-        
-        <span>Send</span>
-        
+      <div className={`field checkbox ${styles.field}`}>
+
+        <label className="checkboxLabel">
+
+          <input
+            type="checkbox"
+            name="termsAccepted"
+            required
+          />
+
+        <p>By submitting this form I agree to your <Link className="link" href="/privacy-policy/">Privacy Policy</Link>. <span className="green">*</span></p>
+
+        </label>
+
+      </div>{/* .field */}
+
+      <button
+        className={`btn ${styles.submit}`}
+        type="submit"
+        disabled={isSending || !formData.name || !formData.email || !formData.message}
+      >
+        {isSending ? <span>Sending...</span> : <span>Send</span>}
       </button>
 
       <p>{status}</p>
-
     </form>
-
   );
-
 };
 
 export default ContactForm;
