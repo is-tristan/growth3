@@ -17,15 +17,29 @@ const sora = localFont({
 });
 
 export const metadata = {
-  title: "Growth3",
-  description: "We help crypto and web3 companies build powerful brands, craft compelling narratives, and create impactful digital experiences.",
+  title: "Your Web3 Consultancy | Growth3",
+  description: "Learn more about our Web3 consultancy services.",
+  keywords: "web3, crypto, consultancy",
+  openGraph: {
+    title: "Home | Growth3",
+    description: "Learn more about our Web3 consultancy services.",
+    images: [
+      {
+        url: "/about-og.jpg",
+        width: 800,
+        height: 600,
+        alt: "About Us Image",
+      },
+    ],
+  },
 };
-
 export default function RootLayout({ children }) {
 
   return (
 
     <html lang="en">
+
+      <head />
 
       <body className={`${prophet.variable} ${sora.variable}`}>
 

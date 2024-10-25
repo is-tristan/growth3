@@ -1,9 +1,26 @@
 import styles from "@/styles/pages/contact.module.scss";
 import ContactForm from "@/components/forms/contactForm";
 import Marquee from "@/components/misc/marquee";
-
 import { Email } from "@carbon/icons-react";
 import { Phone } from "@carbon/icons-react";
+
+export const metadata = {
+    title: "Contact | Growth3",
+    description: "Whether you have questions about our services, want to discuss a potential partnership, or need assistance with your web3 project, our team is here to help.",
+    keywords: "web3, crypto, consultancy",
+    openGraph: {
+      title: "Contact | Growth3",
+      description: "Whether you have questions about our services, want to discuss a potential partnership, or need assistance with your web3 project, our team is here to help.",
+      images: [
+        {
+          url: "/og.jpg",
+          width: 800,
+          height: 600,
+          alt: "Contact Image",
+        },
+      ],
+    },
+  };
 
 export default function ContactUs() {
 
@@ -45,7 +62,7 @@ export default function ContactUs() {
 
                                 <a className={`link ${styles.link}`} href="mailto:harry@growth3.co" aria-label="Email us">harry@growth3.co</a>
 
-                                <p className="green">He'll get back to you as soon as possible</p>
+                                <p className="green">He"ll get back to you as soon as possible</p>
 
                             </div> {/* .content */}
 
