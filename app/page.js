@@ -41,7 +41,7 @@ export default function Home() {
 
             <h1>The web<sup>3</sup> consultancy for <span className="green">market movers</span>.</h1>
 
-            <p>We help crypto and web3 companies build powerful brands, craft compelling narratives, and creative innovative web solutions.</p>
+            <p>We help crypto and web3 companies build powerful brands, craft compelling narratives, and create innovative web solutions.</p>
 
           </div> {/* .heading */}
 

@@ -18,11 +18,11 @@ const sora = localFont({
 
 export const metadata = {
   title: "Your Web3 Consultancy | Growth3",
-  description: "Learn more about our Web3 consultancy services.",
+  description: "We help crypto and web3 companies build powerful brands, craft compelling narratives, and create innovative web solutions.",
   keywords: "web3, crypto, consultancy",
   openGraph: {
     title: "Home | Growth3",
-    description: "Learn more about our Web3 consultancy services.",
+    description: "We help crypto and web3 companies build powerful brands, craft compelling narratives, and create innovative web solutions.",
     images: [
       {
         url: "/about-og.jpg",
