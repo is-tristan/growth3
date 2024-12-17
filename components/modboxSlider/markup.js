@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import "keen-slider/keen-slider.min.css";
 import Link from "next/link";
 
-
 // Icons
 import { ArrowRight } from "@carbon/icons-react";
 import { Calendar } from "@carbon/icons-react";
@@ -16,7 +15,9 @@ import styles from "@/styles/sliders/modboxSlider.module.scss";
 import dotStyles from "@/styles/sliders/dotNav.module.scss";
 
 export default function ModBoxSlider({ modboxItems }) {
-  const [currentSlide, setCurrentSlide] = useState(0); // Track the current slide
+
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
   const [sliderRef, instanceRef] = useKeenSlider({
     loop: true,
     slides: { perView: 3, spacing: 24 },
@@ -69,7 +70,7 @@ export default function ModBoxSlider({ modboxItems }) {
 
               <div className={styles.meta}>
 
-                <div className={styles.date}>
+                <div className={styles.date} style={{display: "none"}}>
 
                   <Calendar />
 
@@ -79,9 +80,9 @@ export default function ModBoxSlider({ modboxItems }) {
 
               </div> {/* .meta */}
 
-              <h4>{item.title}</h4>
+              <h3>{item.title}</h3>
 
-              <Link className="btn tLight" href={`/posts/${item.slug}`}>
+              <Link className="btn tLight" href={`/modbox/news/${item.slug}`}>
 
                   <span>Read More</span>
 

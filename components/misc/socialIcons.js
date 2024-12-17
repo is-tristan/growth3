@@ -15,13 +15,13 @@ export default function SocialIcons( { className = "" } ) {
 
         <div className={`socialIcons ${className} ${styles.socialIcons}`}>
 
-            <a className={styles.icon} href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><LogoFacebook /></a>
+            <a style={{display: "none"}} className={styles.icon} href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><LogoFacebook /></a>
 
-            <a className={styles.icon} href="#" target="_blank" rel="noopener noreferrer" aria-label="X formerly Twitter"><LogoX /></a>
+            <a className={styles.icon} href="https://x.com/ModBoxG3" target="_blank" rel="noopener noreferrer" aria-label="X formerly Twitter"><LogoX /></a>
 
-            <a className={styles.icon} href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><LogoInstagram /></a>
+            <a style={{display: "none"}} className={styles.icon} href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><LogoInstagram /></a>
 
-            <a className={styles.icon} href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LogoLinkedin /></a>
+            <a style={{display: "none"}} className={styles.icon} href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><LogoLinkedin /></a>
 
         </div>
 

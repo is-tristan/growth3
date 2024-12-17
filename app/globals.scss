@@ -36,6 +36,31 @@ a {
   text-decoration: none;
 }
 
+// ========== Hidden Rules ========== //
+.hiddenS {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+.hiddenM {
+  @media (min-width: 768px) and (max-width: 1199px) {
+    display: none;
+  }
+}
+
+.hiddenL {
+  @media (min-width: 1200px) and (max-width: 1499px) {
+    display: none;
+  }
+}
+
+.hiddenXL {
+  @media (min-width: 1500px) {
+    display: none;
+  }
+}
+
 // ========== Typography ========== //
 
 h1,
@@ -45,12 +70,12 @@ h4,
 h5,
 h6 {
   font-family: var(--font-prophet);
-  line-height: 100%;
+  line-height: 110%;
   letter-spacing: -0.035em;
 }
 
 h1 {
-  font-size: 3.25rem;
+  font-size: 2.5rem;
 
   @media (min-width: 768px) {
     font-size: 4rem;
@@ -66,7 +91,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2.5rem;
+  font-size: 2.25rem;
 
   @media (min-width: 768px) {
     font-size: 3rem;
@@ -83,18 +108,6 @@ h2 {
 
 h3 {
   font-size: 2rem;
-
-  @media (min-width: 768px) {
-    font-size: 2.5rem;
-  }
-
-  @media (min-width: 1200px) {
-    font-size: 3rem;
-  }
-
-  @media (min-width: 1500px) {
-    font-size: 4rem;
-  }
 }
 
 h4 {
@@ -332,12 +345,19 @@ ol {
   }
 }
 
-// Banners
-.banner {
+// Home Banner
+.homeBanner {
   min-height: calc(100vh - 3rem);
   overflow: hidden;
   background: radial-gradient(circle at 50% 50%, #192430, #161f2a, #131a23, #0f161d, #0c1218, #0b0f15, #090c12, #07090d);
 
+}
+
+// Banners
+.banner {
+  min-height: calc(85vh - 3rem);
+  padding-top: 3rem;
+  
   .wrapper {
     gap: 3rem;
     padding-top: 7.5rem;
@@ -346,10 +366,11 @@ ol {
     @media (min-width: 1200px) {
       gap: 5rem;
     }
-  }
 
+  }
+  
   .heading {
-    max-width: 1080px;
+    max-width: 1140px;
 
     p {
       max-width: 40rem;
@@ -699,12 +720,18 @@ ol {
   h3 {
     white-space: nowrap;
     color: inherit;
+    font-size: 2rem;
 
-    @media (max-width: 1200px) {
-      font-size: 2rem;
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
     }
+  
+    @media (min-width: 1200px) {
+      font-size: 3rem;
+    }
+  
   }
-
+  
   .cross {
     color: var(--primary);
     white-space: nowrap;

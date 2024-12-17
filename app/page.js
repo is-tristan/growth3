@@ -11,8 +11,8 @@ import coverAnimation from "@/public/animations/background.json";
 
 // Icons
 import { ArrowUpRight } from "@carbon/icons-react";
-import { Portfolio } from "@carbon/icons-react";
 import { Chat } from "@carbon/icons-react";
+import { MagicWandFilled } from "@carbon/icons-react";
 
 // Images
 import homeAboutImage from "@/public/images/home_mountain.png"
@@ -31,7 +31,7 @@ export default function Home() {
 
     <main id="content">
 
-      <div id="banner" className={`row banner ${styles.homeBanner}`}>
+      <div id="banner" className={`row banner homeBanner ${styles.homeBanner}`}>
 
         <LottieAnimation animationData={coverAnimation} loop={true} autoplay={true} className={styles.coverLottie} />
 
@@ -47,19 +47,19 @@ export default function Home() {
 
           <div className="buttons">
 
-            <Link className="btn fGreen" href="/contact/">
+            <Link className="btn fGreen" href="/modbox/">
 
-              <span>Get started now</span>
+              <span>Explore ModBox</span>
 
               <ArrowUpRight />
 
             </Link> {/* .btn.fGreen */}
 
-            <Link className="btn tLight" href="#portfolio">
+            <Link className="btn tLight" href="/contact/">
 
-              <span>Our Portfolio</span>
+              <span>Get in Touch</span>
 
-              <Portfolio />
+              <Chat/>
 
             </Link> {/* .btn.tLight */}
 
@@ -109,7 +109,7 @@ export default function Home() {
 
               <Link className="btn fGreen" href="/contact/">
 
-                <span>Contact Us</span>
+                <span>Let's Chat</span>
 
                 <Chat />
 
@@ -117,9 +117,9 @@ export default function Home() {
 
               <Link className="btn tLight" href="/portfolio/">
 
-                <span>View Portfolio</span>
+                <span>Explore ModBox</span>
 
-                <Portfolio />
+                <MagicWandFilled />
 
               </Link> {/* .btn.tLight */}
 

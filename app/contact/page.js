@@ -5,6 +5,7 @@ import { Email } from "@carbon/icons-react";
 import { Phone } from "@carbon/icons-react";
 
 export const metadata = {
+    metadataBase: new URL('https://growth3.co/contact'),
     title: "Contact | Growth3",
     description: "Whether you have questions about our services, want to discuss a potential partnership, or need assistance with your web3 project, our team is here to help.",
     keywords: "web3, crypto, consultancy",

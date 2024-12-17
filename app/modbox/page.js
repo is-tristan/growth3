@@ -1,4 +1,4 @@
-import styles from "@/styles/pages/modbox.module.scss";
+import styles from "@/styles/pages/modbox/modbox.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "@/components/misc/marquee";
@@ -7,8 +7,8 @@ import XFeed from "@/components/misc/XFeed";
 
 // Icons
 import { ArrowUpRight } from "@carbon/icons-react";
-import { Portfolio } from "@carbon/icons-react";
 import { Chat } from "@carbon/icons-react";
+import { Bullhorn } from "@carbon/icons-react";
 
 // Images
 import bannerBg from "@/public/backgrounds/background_sandy.webp";
@@ -16,14 +16,23 @@ import aboutImage from "@/public/images/modbox_about.webp";
 import dotsBg from "@/public/backgrounds/background_dots.webp"
 
 export const metadata = {
-    metadataBase: null,
-    title: "Modbox | Growth3",
-    description: "We specialise in driving growth and success for Web3 projects through expert community management and strategic marketing solutions.",
-    keywords: "web3, crypto, consultancy",
+    metadataBase: new URL('https://growth3.co/modbox'),
+    title: "ModBox | Growth3",
+    description: "At ModBox, we provide expert community management and strategic marketing services to help Web3 projects scale effectively.",
+    keywords: "web3, crypto, consultancy, modbox",
     openGraph: {
-        images: '/og.jpg',
+      title: "ModBox | Growth3",
+      description: "At ModBox, we provide expert community management and strategic marketing services to help Web3 projects scale effectively.",
+      images: [
+        {
+          url: "/og.jpg",
+          width: 800,
+          height: 600,
+          alt: "Modbox Image",
+        },
+      ],
     },
-};
+  };
 
 export default function ModBox() {
 
@@ -86,17 +95,17 @@ export default function ModBox() {
 
                             <Link className="btn fGreen" href="/contact/">
 
-                                <span>Get Started</span>
+                                <span>Let's Chat</span>
 
-                                <ArrowUpRight />
+                                <Chat />
 
                             </Link> {/* .btn.fGreen */}
 
                             <Link className="btn tLight" href="/portfolio/" style={{ display: "none" }}>
 
-                                <span>View Portfolio</span>
+                                <span>View ModBox News</span>
 
-                                <Portfolio />
+                                <Bullhorn />
 
                             </Link> {/* .btn.tLight */}
 
@@ -118,7 +127,7 @@ export default function ModBox() {
 
                         <h2>Latest articles from the community<span className="green">.</span></h2>
 
-                        <Link className="btn tLight" href="/modbox-news/">
+                        <Link className="btn tLight" href="/modbox/news/">
 
                             <span>Explore All Posts</span>
 

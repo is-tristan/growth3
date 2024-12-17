@@ -1,0 +1,33 @@
+.socialShare {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: .5rem;
+        border: 1.5px solid #e5e5e5;
+        transition: var(--cubic);
+
+        svg {
+            width: 50%;
+            height: 50%;
+            fill: #e5e5e5;
+            transition: var(--cubic);
+        }
+
+        &:hover {
+            background: var(--dark);
+            border-color: var(--primary);
+            transform: translateY(-0.15rem);
+
+            svg {
+                fill: var(--primary);
+            }
+        }
+    }
+}

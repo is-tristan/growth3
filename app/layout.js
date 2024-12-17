@@ -17,6 +17,7 @@ const sora = localFont({
 });
 
 export const metadata = {
+  metadataBase: new URL('https://growth3.co'),
   title: "Your Web3 Consultancy | Growth3",
   description: "We help crypto and web3 companies build powerful brands, craft compelling narratives, and create innovative web solutions.",
   keywords: "web3, crypto, consultancy",
@@ -28,7 +29,7 @@ export const metadata = {
         url: "/about-og.jpg",
         width: 800,
         height: 600,
-        alt: "About Us Image",
+        alt: "Growth3.co Image",
       },
     ],
   },

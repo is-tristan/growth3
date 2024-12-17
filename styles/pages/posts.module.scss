@@ -1,29 +1,55 @@
 .postsRow {
+    padding-top: 0;
+
+    @media (min-width: 768px) {
+        padding-top: 3rem;
+    }
 
     .wrapper {
-        max-width: 1080px;
+        gap: 1.5rem;
+
+        @media (min-width: 768px) {
+            gap: 3rem;
+            max-width: 768px;
+        }
+
+        @media (min-width: 1200px) {
+            max-width: 996px;
+        }
     }
 
     .heading {
         gap: 1.5rem;
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2rem;
             line-height: 125%;
 
             @media (min-width: 768px) {
-                font-size: 3rem;
+                font-size: 2.75rem;
             }
 
             @media (min-width: 1200px) {
                 font-size: 3.5rem;
             }
+
+            &::after {
+                content: '.';
+                color: var(--primary);
+            }
         }
 
         .meta {
             display: flex;
-            align-items: center;
-            gap: 1rem;
+            flex-direction: column;
+            width: 100%;
+            gap: 2rem;
+
+            @media (min-width: 768px) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
 
             .date {
                 display: flex;
@@ -41,7 +67,7 @@
         }
 
     }
-    
+
     .image {
         width: 100%;
         height: 30rem;
@@ -52,6 +78,111 @@
         img {
             object-fit: cover;
             object-position: center;
+        }
+    }
+
+    .content {
+
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            line-height: 125%;
+            margin: 1.25rem 0;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+
+            @media (min-width: 768px) {
+                font-size: 2.5rem;
+            }
+
+        }
+
+        h3 {
+            font-size: 1.5rem;
+
+            @media (min-width: 768px) {
+                font-size: 2rem;
+            }
+
+        }
+
+        h4 {
+            font-size: 1.25rem;
+
+            @media (min-width: 768px) {
+                font-size: 1.75rem;
+            }
+
+        }
+
+        h5 {
+            font-size: 1rem;
+
+            @media (min-width: 768px) {
+                font-size: 1.25rem;
+            }
+
+        }
+
+        h6 {
+            font-size: .875rem;
+
+            @media (min-width: 768px) {
+                font-size: 1rem;
+            }
+
+            @media (min-width: 1200px) {
+                font-size: 1.1rem;
+            }
+
+        }
+
+        p,
+        ol,
+        ul {
+            font-size: .875rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+
+            @media (min-width: 768px) {
+                font-size: 1rem;
+            }
+
+            @media (min-width: 1200px) {
+                font-size: 1.1rem;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        ol,
+        ul {
+            display: flex;
+            gap: .875rem;
+            margin: 1.5rem 0;
+            list-style: square;
+
+            li {
+                padding-left: 1rem;
+                position: relative;
+
+                &::marker {
+                    color: var(--primary);
+                }
+            }
+        }
+
+        a {
+            text-decoration: underline;
+            color: var(--primary);
+            padding-bottom: .25rem;
+            position: relative;
         }
     }
 }

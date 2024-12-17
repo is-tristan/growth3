@@ -55,20 +55,18 @@
     @media (min-width: 768px) {
         gap: 2rem;
     }
-
-    .btn {
-
-        @media (min-width: 768px) {
-            display: flex;
-        }
-    }
 }
 
 .headerBtn {
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
         padding: .875rem .5rem;
+
+        svg {
+            display: none;
+        }
     }
+
 }
 
 .hamburger {
