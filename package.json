@@ -14,11 +14,13 @@
     "graphql": "^16.9.0",
     "keen-slider": "^6.8.6",
     "lottie-react": "^2.4.0",
-    "next": "14.2.15",
+    "next": "^15.1.0",
+    "next-app": "^0.0.0",
     "nodemailer": "^6.9.15",
     "react": "^18",
     "react-dom": "^18",
     "react-slick": "^0.30.2",
+    "react-twitter-embed": "^4.0.4",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

@@ -176,11 +176,11 @@ ol {
   list-style: square;
 
   li {
-      font-weight: 500;
+    font-weight: 500;
 
-      &::marker {
-        color: var(--primary);
-      }
+    &::marker {
+      color: var(--primary);
+    }
   }
 }
 
@@ -316,6 +316,22 @@ ol {
   }
 }
 
+.heading.between {
+  @media (min-width: 1200px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  h2 {
+    flex: 1;
+  }
+
+  .btn {
+    flex-shrink: 1;
+  }
+}
+
 // Banners
 .banner {
   min-height: calc(100vh - 3rem);
@@ -353,6 +369,14 @@ ol {
   padding-top: 3rem;
 }
 
+// Paralax
+.parallax {
+  @media (min-width: 1200px) {
+    background-attachment: fixed;
+    background-size: cover;
+  }
+}
+
 // ========== Buttons ========== //
 .buttons {
   display: flex;
@@ -366,8 +390,8 @@ ol {
   justify-content: center;
   align-items: center;
   gap: .5rem;
-  width: auto;
-  height: auto;
+  width: fit-content;
+  height: fit-content;
   padding: 1rem 1.5rem;
   border-radius: .5rem;
   border: 1.5px solid transparent;
@@ -388,6 +412,10 @@ ol {
   svg {
     position: relative;
     z-index: 1;
+  }
+
+  svg {
+    transition: var(--cubic);
   }
 
   &::before {
@@ -423,6 +451,10 @@ ol {
     transition: var(--cubicAlt);
   }
 
+  svg {
+    fill: var(--primary);
+  }
+
   &:hover {
     color: var(--dark);
 
@@ -430,6 +462,10 @@ ol {
       height: 100%;
       top: unset;
       bottom: 0;
+    }
+
+    svg {
+      fill: var(--dark);
     }
   }
 }
@@ -688,10 +724,13 @@ ol {
 // Green Background
 .bGreen {
   background: var(--primary);
-  color: var();
 
   .light {
     color: var(--light);
+  }
+
+  .cross {
+    color: var(--dark);
   }
 }
 
@@ -729,5 +768,17 @@ ol {
 
   @media (min-width: 768px) {
     transform: rotate(6.5deg);
+  }
+}
+
+// ========== X Feed ========== //
+.xRow {
+
+  .xWrapper {
+    padding-top: 0;
+
+    @media (min-width: 768px) {
+      gap: 5rem;
+    }
   }
 }
