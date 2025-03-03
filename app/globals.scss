@@ -7,7 +7,6 @@
   --lightAlt: #EAEAEA;
   --cubic: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
   --cubicAlt: all .5s cubic-bezier(0.215, 0.610, 0.355, 1);
-  ;
   --ease: all .5s ease;
 }
 
@@ -19,7 +18,10 @@ body {
 
 body {
   color: var(--lightAlt);
-  background: var(--dark);
+  background-color: var(--darkAlt);
+  background-image: url("../public/backgrounds/batthern.png");
+  background-repeat: repeat;
+  background-size: auto;
   font-family: var(--font-sora), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -39,25 +41,25 @@ a {
 // ========== Hidden Rules ========== //
 .hiddenS {
   @media (max-width: 767px) {
-    display: none;
+    display: none !important;
   }
 }
 
 .hiddenM {
   @media (min-width: 768px) and (max-width: 1199px) {
-    display: none;
+    display: none !important;
   }
 }
 
 .hiddenL {
   @media (min-width: 1200px) and (max-width: 1499px) {
-    display: none;
+    display: none !important;
   }
 }
 
 .hiddenXL {
   @media (min-width: 1500px) {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -97,13 +99,10 @@ h2 {
     font-size: 3rem;
   }
 
-  @media (min-width: 1200px) {
+  @media (min-width: 1512px) {
     font-size: 4rem;
   }
-
-  @media (min-width: 1500px) {
-    font-size: 5rem;
-  }
+  
 }
 
 h3 {
@@ -287,7 +286,7 @@ ol {
 
   @media (min-width: 1500px) {
     gap: 8rem;
-    padding: 8rem 5rem;
+    padding: 8rem;
   }
 }
 
@@ -357,7 +356,7 @@ ol {
 .banner {
   min-height: calc(85vh - 3rem);
   padding-top: 3rem;
-  
+
   .wrapper {
     gap: 3rem;
     padding-top: 7.5rem;
@@ -368,7 +367,7 @@ ol {
     }
 
   }
-  
+
   .heading {
     max-width: 1140px;
 
@@ -725,13 +724,13 @@ ol {
     @media (min-width: 768px) {
       font-size: 2.5rem;
     }
-  
+
     @media (min-width: 1200px) {
       font-size: 3rem;
     }
-  
+
   }
-  
+
   .cross {
     color: var(--primary);
     white-space: nowrap;

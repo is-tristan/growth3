@@ -1,10 +1,13 @@
 import styles from "@/styles/pages/policy.module.scss";
+import Header from "@/components/global/header";
 
 export default function PrivacyPolicy() {
 
     return (
 
-        <main id="content">
+        <>
+
+            <Header />
 
             <div className="row smallBanner centered">
 
@@ -134,7 +137,7 @@ export default function PrivacyPolicy() {
 
             </div>
 
-        </main>
+        </>
 
     );
 

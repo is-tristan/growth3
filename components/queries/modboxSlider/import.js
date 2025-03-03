@@ -2,7 +2,7 @@
 
 import { gql } from '@apollo/client';
 import client from '@/lib/apolloClient';
-import ModBoxMarkup from "@/components/modboxSlider/markup";
+import ModBoxMarkup from "@/components/queries/modboxSlider/markup";
 
 // GraphQL query to fetch post data
 const ModBoxQuery = gql`

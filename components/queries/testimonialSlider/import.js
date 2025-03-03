@@ -2,7 +2,7 @@
 
 import { gql } from '@apollo/client';
 import client from '@/lib/apolloClient';
-import TestimonialMarkup from "@/components/testimonialSlider/markup";
+import TestimonialMarkup from "@/components/queries/testimonialSlider/markup";
 
 // GraphQL query to fetch portfolio data
 const TestimonialQuery = gql`

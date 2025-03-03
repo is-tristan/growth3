@@ -1,10 +1,13 @@
 import styles from "@/styles/pages/policy.module.scss";
+import Header from "@/components/global/header";
 
 export default function TermsAndConditions() {
 
     return (
 
-        <main id="content">
+        <>
+
+        <Header />
 
             <div className="row smallBanner centered">
 
@@ -101,12 +104,12 @@ export default function TermsAndConditions() {
                     <br />
 
                     <p><strong>Email:</strong> hi@growth3.co</p>
-                    
+
                 </div>
 
             </div>
 
-        </main>
+        </>
 
     );
 

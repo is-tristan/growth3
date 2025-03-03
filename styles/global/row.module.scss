@@ -1,0 +1,30 @@
+.noPaddingTop {
+    @media (min-width: 1200px) {
+        padding-top: 0;
+    }
+}
+
+.noPaddingBottom {
+    @media (min-width: 1200px) {
+        padding-bottom: 0;
+    }
+}
+
+
+.headingWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    p {
+        max-width: 45rem;
+
+        @media (min-width: 768px) {
+            margin: auto;
+        }
+
+        @media (min-width: 1200px) {
+            margin: unset;
+        }
+    }
+}

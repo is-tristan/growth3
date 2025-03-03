@@ -14,101 +14,99 @@ export default function ContactCTA() {
 
         <div className={`row cta ${styles.contactForm}`}>
 
-            <div className={`wrapper dualCols ${styles.contactCols}`}>
+            <div className={`wrapper ${styles.contactWrapper}`}>
 
-                <div className={`col ${styles.contactCol}`}>
+                <h2><span className="green">Ready</span> to take action<span className="green">?</span> So are we<span className="green">.</span></h2>
 
-                    <h3><span className="green">Ready</span> to take action<span className="green">?</span> So are we<span className="green">.</span></h3>
-
-                    <div className={styles.contactColWrapper}>
-
-                        <div className={styles.contactItems}>
-
-                            <div className={styles.contactItem}>
-
-                                <div className={styles.icon}>
-
-                                    <Email />
-
-                                </div> {/* .icon */}
-
-                                <div className={styles.content}>
-
-                                    <p className="small"><strong>Email Address</strong></p>
-
-                                    <a href="mailto:hi@growth3.agency" target="_blank" rel="noopener noreferrer">hi@growth3.agency</a>
-
-                                </div> {/* .content */}
-
-                            </div> {/* .contactItem */}
-
-                            <div className={styles.contactItem}>
-
-                                <div className={styles.icon}>
-
-                                    <Phone />
-
-                                </div> {/* .icon */}
-
-                                <div className={styles.content}>
-
-                                    <p className="small"><strong>Phone Number</strong></p>
-
-                                    <a href="tel:+441234567890" target="_blank" rel="noopener noreferrer">+44 123 4567 890</a>
-
-                                </div> {/* .content */}
-
-                            </div> {/* .contactItem */}
-
-                            <div className={styles.contactItem}>
-
-                                <div className={styles.icon}>
-
-                                    <Time />
-
-                                </div> {/* .icon */}
-
-                                <div className={styles.content}>
-
-                                    <p className="small"><strong>Opening Hours</strong></p>
-
-                                    <p>Mon - Fri: 9am - 5pm</p>
-
-                                </div> {/* .content */}
-
-                            </div> {/* .contactItem */}
-
-                            <div className={styles.contactItem}>
-
-                                <div className={styles.icon}>
-
-                                    <LocationCompany />
-
-                                </div> {/* .icon */}
-
-                                <div className={styles.content}>
-
-                                    <p className="small"><strong>Based out of</strong></p>
-
-                                    <p>London, U.K.</p>
-
-                                </div> {/* .content */}
-
-                            </div> {/* .contactItem */}
-
-                            <SocialIcons className={styles.footerSocials} />
-
-                        </div> {/* .contactItems */}
-
-                    </div> {/* .contactColWrapper */}
-
-                </div> {/* .contactCol */}
-
-                <div className={`col ${styles.formWrapper}`}>
+                <div className={`${styles.formWrapper}`}>
 
                     <ContactForm />
 
-                </div>
+                </div>  {/* .formWrapper */}
+
+                <div className={`${styles.contactInfo}`}>
+
+                    <div className={styles.contactItems}>
+
+                        <div className={styles.contactItem}>
+
+                            <div className={styles.icon}>
+
+                                <Email />
+
+                            </div> {/* .icon */}
+
+                            <div className={styles.content}>
+
+                                <p className="small"><strong>Email Address</strong></p>
+
+                                <a href="mailto:hi@growth3.agency" target="_blank" rel="noopener noreferrer">hi@growth3.agency</a>
+
+                            </div> {/* .content */}
+
+                        </div> {/* .contactItem */}
+
+                        <div className={styles.contactItem}>
+
+                            <div className={styles.icon}>
+
+                                <Phone />
+
+                            </div> {/* .icon */}
+
+                            <div className={styles.content}>
+
+                                <p className="small"><strong>Phone Number</strong></p>
+
+                                <a href="tel:+441234567890" target="_blank" rel="noopener noreferrer">+44 123 4567 890</a>
+
+                            </div> {/* .content */}
+
+                        </div> {/* .contactItem */}
+
+                        <div className={styles.contactItem}>
+
+                            <div className={styles.icon}>
+
+                                <Time />
+
+                            </div> {/* .icon */}
+
+                            <div className={styles.content}>
+
+                                <p className="small"><strong>Opening Hours</strong></p>
+
+                                <p>Mon - Fri: 9am - 5pm</p>
+
+                            </div> {/* .content */}
+
+                        </div> {/* .contactItem */}
+
+                        <div className={styles.contactItem}>
+
+                            <div className={styles.icon}>
+
+                                <LocationCompany />
+
+                            </div> {/* .icon */}
+
+                            <div className={styles.content}>
+
+                                <p className="small"><strong>Based out of</strong></p>
+
+                                <p>London, U.K.</p>
+
+                            </div> {/* .content */}
+
+                        </div> {/* .contactItem */}
+
+                    </div> {/* .contactItems */}
+
+                    <h3>Checkout out our <span className="green">socials:</span></h3>
+
+                    <SocialIcons className={styles.footerSocials} />
+
+                </div> {/* .contactInfo */}
 
             </div> {/* .wrapper */}
 

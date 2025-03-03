@@ -3,33 +3,49 @@ import ContactForm from "@/components/forms/contactForm";
 import Marquee from "@/components/misc/marquee";
 import { Email } from "@carbon/icons-react";
 import { Phone } from "@carbon/icons-react";
+import Header from "@/components/global/header";
 
 export const metadata = {
-    metadataBase: new URL('https://growth3.co/contact'),
-    title: "Contact | Growth3",
-    description: "Whether you have questions about our services, want to discuss a potential partnership, or need assistance with your web3 project, our team is here to help.",
-    keywords: "web3, crypto, consultancy",
+    metadataBase: new URL('https://growth3.co'),
+    title: "Contact Growth3 | Web3 Consultancy & Services",
+    description: "Reach out to Growth3 for web3 and crypto consultancy services. Our team is ready to discuss your project needs, partnerships, or answer any questions about our services.",
+    keywords: "web3 consultancy, crypto services, blockchain experts, contact Growth3, web3 project assistance, crypto partnership",
     openGraph: {
-      title: "Contact | Growth3",
-      description: "Whether you have questions about our services, want to discuss a potential partnership, or need assistance with your web3 project, our team is here to help.",
-      images: [
-        {
-          url: "/og.jpg",
-          width: 800,
-          height: 600,
-          alt: "Contact Image",
-        },
-      ],
+        title: "Contact Growth3 | Web3 Consultancy & Services",
+        description: "Reach out to our team of web3 experts. We're ready to discuss your project needs, partnerships, or answer any questions about our services.",
+        url: 'https://growth3.co/contact',
+        siteName: 'Growth3',
+        images: [
+            {
+                url: "/og.jpg",
+                width: 1200,
+                height: 630,
+                alt: "Growth3 Contact Page",
+            },
+        ],
+        locale: 'en_US',
+        type: 'website',
     },
-  };
+    twitter: {
+        card: 'summary_large_image',
+        title: "Contact Growth3 | Web3 Consultancy & Services",
+        description: "Get in touch with our web3 experts today",
+        images: ["/og.jpg"],
+    },
+    robots: {
+        index: true,
+        follow: true,
+    }
+};
 
 export default function ContactUs() {
 
     return (
 
-        <main id="content">
+        <>
+            <Header />
 
-            <div className={`row banner flexC ${styles.contactRow}`}>
+            <section className={`row flexC ${styles.contactRow}`}>
 
                 <div className={`wrapper ${styles.wrapper}`}>
 
@@ -95,9 +111,9 @@ export default function ContactUs() {
 
                 <Marquee className="bDark" />
 
-            </div>
+            </section> {/* .contactRow */}
 
-        </main>
+        </>
     )
 
 }

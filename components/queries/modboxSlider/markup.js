@@ -74,7 +74,7 @@ export default function ModBoxSlider({ modboxItems }) {
 
                   <Calendar />
 
-                  <span>{new Date(item.date).toLocaleDateString()}</span>
+                  <span>{item.date ? new Date(item.date).toLocaleDateString() : 'No date'}</span>
 
                 </div> {/* .date */}
 

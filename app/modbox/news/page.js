@@ -4,26 +4,40 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar } from "@carbon/icons-react";
 import { ArrowRight } from "@carbon/icons-react";
+import Header from '@/components/global/header';
 import styles from "@/styles/pages/modbox/modboxNews.module.scss";
 
 export const metadata = {
-    metadataBase: new URL('https://growth3.co/modbox/news/'),
-    title: "ModBox | Growth3",
-    description: "Catch all the latest news At ModBox.",
-    keywords: "web3, crypto, consultancy, modbox, news",
-    openGraph: {
-      title: "ModBox | Growth3",
-      description: "Catch all the latest news At ModBox.",
-      images: [
-        {
-          url: "/og.jpg",
-          width: 800,
-          height: 600,
-          alt: "News Image",
-        },
-      ],
-    },
-  };
+  metadataBase: new URL('https://growth3.co'),
+  title: "ModBox News | Latest Updates from Growth3",
+  description: "Stay up-to-date with the latest news, announcements and developments from ModBox by Growth3.",
+  keywords: "web3, blockchain, crypto, decentralized applications, modbox news, Growth3 updates, web3 consultancy",
+  alternates: {
+    canonical: '/modbox/news'
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://growth3.co/modbox/news/",
+    title: "ModBox News | Growth3",
+    description: "Stay up-to-date with the latest news, announcements and developments from ModBox by Growth3.",
+    siteName: "Growth3",
+    images: [
+      {
+        url: "/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "ModBox News by Growth3",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ModBox News | Growth3", 
+    description: "Latest updates and announcements from ModBox by Growth3",
+    images: ["/og.jpg"],
+  },
+};
 
 // GraphQL query to fetch post data
 const ModBoxQuery = gql`
@@ -51,105 +65,111 @@ const ModBoxQuery = gql`
 
 // Modbox Slider component
 export default async function ModboxPosts() {
-    try {
-        // Fetch data from GraphQL API
-        const { data } = await client.query({
-            query: ModBoxQuery,
-        });
+  try {
+    // Fetch data from GraphQL API
+    const { data } = await client.query({
+      query: ModBoxQuery,
+    });
 
-        // Extract posts data
-        const modboxItems = data?.posts?.nodes || [];
+    // Extract posts data
+    const modboxItems = data?.posts?.nodes || [];
 
-        return (
+    return (
 
-            <div className={`row smallBanner centered ${styles.postsRow}`}>
+      <>
 
-                <div className="wrapper">
+        <Header />
 
-                    <div className="heading">
+        <div className={`row smallBanner centered ${styles.postsRow}`}>
 
-                        <h1> Modbox News<span className="green">.</span> </h1>
+          <div className="wrapper">
 
-                        <p>Catch the latest from Growth3 and modbox.</p>
+            <div className="heading">
 
-                    </div> {/* .heading */}
+              <h1> Modbox News<span className="green">.</span> </h1>
 
-                    <div className={styles.postsGrid}>
+              <p>Catch the latest from Growth3 and modbox.</p>
 
-                        {modboxItems.map((item) => (
+            </div> {/* .heading */}
 
-                            <div key={item.id} className={styles.item}>
+            <div className={styles.postsGrid}>
 
-                                <div className={styles.image}>
+              {modboxItems.map((item) => (
 
-                                    {item.featuredImage?.node?.mediaItemUrl && (
-                                        <Image
-                                            src={item.featuredImage.node.mediaItemUrl}
-                                            alt={item.title || "Portfolio item"}
-                                            fill
-                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                            quality={80}
-                                        />
-                                    )}
+                <div key={item.id} className={styles.item}>
 
-                                </div> {/* .image */}
+                  <div className={styles.image}>
 
-                                <div className={styles.content}>
+                    {item.featuredImage?.node?.mediaItemUrl && (
+                      <Image
+                        src={item.featuredImage.node.mediaItemUrl}
+                        alt={item.title || "Portfolio item"}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        quality={80}
+                      />
+                    )}
 
-                                    <div className={styles.meta}>
+                  </div> {/* .image */}
 
-                                        <div className={styles.date}>
+                  <div className={styles.content}>
 
-                                            <Calendar />
+                    <div className={styles.meta}>
 
-                                            <span>{new Date(item.date).toLocaleDateString()}</span>
+                      <div className={styles.date}>
 
-                                        </div> {/* .date */}
+                        <Calendar />
 
-                                    </div> {/* .meta */}
+                        <span>{new Date(item.date).toLocaleDateString()}</span>
 
-                                    <h4>{item.title}</h4>
+                      </div> {/* .date */}
 
-                                    <Link className="btn tLight" href={`/modbox/news/${item.slug}`}>
+                    </div> {/* .meta */}
 
-                                        <span>Read More</span>
+                    <h4>{item.title}</h4>
 
-                                        <ArrowRight />
+                    <Link className="btn tLight" href={`/modbox/news/${item.slug}`}>
 
-                                    </Link> {/* .btn */}
+                      <span>Read More</span>
 
-                                </div> {/* .content */}
+                      <ArrowRight />
 
-                            </div>
+                    </Link> {/* .btn */}
 
-                        ))}
+                  </div> {/* .content */}
 
-                    </div> {/* .postsGrid */}
+                </div>
 
-                </div> {/* .wrapper */}
+              ))}
 
-            </div>
+            </div> {/* .postsGrid */}
 
-        );
-    } catch (error) {
+          </div> {/* .wrapper */}
 
-        console.error("Error fetching posts data:", error);
+        </div>
 
-        return (
+      </>
 
-            <div className="row">
+    );
+  } catch (error) {
 
-                <div className="wrapper">
+    console.error("Error fetching posts data:", error);
 
-                    <div className="heading centered">
+    return (
 
-                        <h1>Error fetching posts<span className="green">...</span> </h1>
+      <div className="row">
 
-                    </div> {/* .heading */}
+        <div className="wrapper">
 
-                </div> {/* .wrapper */}
+          <div className="heading centered">
 
-            </div>
-        );
-    }
+            <h1>Error fetching posts<span className="green">...</span> </h1>
+
+          </div> {/* .heading */}
+
+        </div> {/* .wrapper */}
+
+      </div>
+    );
+  }
 }

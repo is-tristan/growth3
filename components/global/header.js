@@ -1,58 +1,130 @@
 // Header.js
+"use client";
+
 import Link from "next/link";
 import styles from "@/styles/global/header.module.scss";
+import { useState } from "react";
 
-// Icons
-import { Chat } from "@carbon/icons-react";
-import { ArrowUpRight } from "@carbon/icons-react";
+import { useEffect } from "react";
 
-export default function Header() {
+export default function Header({ isTransparent }) {
 
+    // Define the navigation menu
+    const navMenu = {
+        "Home": "/",
+        "Web": "/web",
+        "Marketing": "/marketing",
+        "ModBox": "/modbox",
+        "Contact Us": "/contact",
+    };
+
+    // Define the state for the mobile menu
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const handleToggle = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    const handleClose = () => {
+        setIsMenuOpen(false);
+        console.log(isMenuOpen);
+    }
+
+    // Return the header
     return (
 
-        <header id="header" className={styles.header}>
+        <>
 
-            <div className={styles.wrapper}>
+            <header id="header" className={`${styles.header} ${isTransparent ? styles.transparent : undefined} ${isMenuOpen ? styles.menuActive : undefined}`}>
 
-                <div className={styles.logo}>
+                <div className={styles.wrapper}>
 
-                    <Link href="/">Growth<sup>3</sup></Link>
+                    <div className={styles.logo}>
 
-                </div> {/* .logo */}
+                        <Link href="/">Growth<sup>3</sup></Link>
 
-                <div className={styles.actions}>
+                    </div> {/* .logo */}
 
-                    <Link className={`btn fGreen ${styles.headerBtn}`} href="/modbox/">
+                    <div className={styles.actions}>
 
-                        <span className="hiddenS hiddenM">Explore ModBox</span>
+                        <nav className={`${styles.menu} ${styles.cta} hiddenS hiddenM`}>
 
-                        <span className="hiddenL hiddenXL">ModBox</span>
+                            {Object.keys(navMenu).map((key, index) => {
 
-                        <ArrowUpRight />
+                                const [isActive, setIsActive] = useState(false);
 
-                    </Link> {/* .btn.fGreen */}
+                                useEffect(() => {
 
-                    <Link className={`btn tLight ${styles.headerBtn}`} href="/contact/">
+                                    if (typeof window !== 'undefined') {
 
-                        <span className="hiddenS hiddenM">Get in Touch</span>
+                                        setIsActive(window.location.pathname === navMenu[key]);
 
-                        <span className="hiddenL hiddenXL">Contact</span>
+                                    }
 
-                        <Chat />
+                                }, []);
 
-                    </Link> {/* .btn.tLight */}
+                                return (
 
-                    <div className={styles.hamburger}>
+                                    <span key={index} className={isActive ? styles.active : ''}>
 
-                        <span className="toggle"></span>
+                                        <Link href={navMenu[key]}>{key}</Link>
 
-                    </div>
+                                    </span>
 
-                </div>
+                                );
 
-            </div> {/* .wrapper */}
+                            })}
 
-        </header>
+                        </nav> {/* .nav */}
+
+                        <div onClick={handleToggle} className={`${styles.hamburgerWrapper} hiddenL hiddenXL`}>
+
+                            <span className={styles.hamburger}></span>
+
+                        </div> {/* .hamburgerWrapper */}
+
+                    </div> {/* .actions */}
+
+                </div> {/* .wrapper */}
+
+                <nav className={`${styles.mobileNav} hiddenL hiddenXL`}>
+
+                    <ul className={`${styles.mobileMenu}`}>
+
+                        {Object.keys(navMenu).map((key, index) => {
+
+                            const [isActive, setIsActive] = useState(false);
+
+                            useEffect(() => {
+
+                                if (typeof window !== 'undefined') {
+
+                                    setIsActive(window.location.pathname === navMenu[key]);
+
+                                }
+
+                            }, []);
+
+                            return (
+
+                                <li key={index} className={isActive ? styles.active : ''}>
+
+                                    <Link href={navMenu[key]}>{key}</Link>
+
+                                </li>
+
+                            );
+
+                        })}
+
+                    </ul> {/* .mobileMenu */}
+
+                </nav> {/* .mobileNav */}
+
+                <div onClick={handleClose} className={styles.overlay}></div>
+
+            </header> {/* #header */}
+
+        </>
 
     );
 }

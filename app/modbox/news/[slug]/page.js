@@ -6,6 +6,7 @@ import { Calendar } from "@carbon/icons-react";
 import SocialShare from '@/components/misc/socialShare';
 import Link from 'next/link';
 import { ArrowLeft } from '@carbon/icons-react';
+import Header from '@/components/global/header';
 
 // Query to fetch a single post by slug
 const GET_POST_BY_SLUG = gql`
@@ -70,19 +71,25 @@ export default async function PostPage({ params }) {
 
     return (
 
-      <article className={`row banner ${styles.postsRow}`}>
+      <>
 
-        <div className={`wrapper ${styles.wrapper}`}>
+        <Header />
 
-          <div className={`heading centered ${styles.heading}`}>
+        <article className={`row banner ${styles.postsRow}`}>
 
-            <h1>Error loading post. Please try again later.</h1>;
+          <div className={`wrapper ${styles.wrapper}`}>
+
+            <div className={`heading centered ${styles.heading}`}>
+
+              <h1>Error loading post. Please try again later.</h1>;
+
+            </div>
 
           </div>
 
-        </div>
+        </article>
 
-      </article>
+      </>
 
     )
   }
@@ -91,19 +98,25 @@ export default async function PostPage({ params }) {
 
     return (
 
-      <article className={`row banner ${styles.postsRow}`}>
+      <>
 
-        <div className={`wrapper ${styles.wrapper}`}>
+        <Header />
 
-          <div className={`heading centered ${styles.heading}`}>
+        <article className={`row banner ${styles.postsRow}`}>
 
-            <h1>Post not found</h1>;
+          <div className={`wrapper ${styles.wrapper}`}>
+
+            <div className={`heading centered ${styles.heading}`}>
+
+              <h1>Post not found</h1>;
+
+            </div>
 
           </div>
 
-        </div>
+        </article>
 
-      </article>
+      </>
 
     )
   }
@@ -113,58 +126,64 @@ export default async function PostPage({ params }) {
 
   return (
 
-    <article className={`row banner ${styles.postsRow}`}>
+    <>
 
-      <div className={`wrapper ${styles.wrapper}`}>
+      <Header />
 
-        <div className={`heading centered ${styles.heading}`}>
+      <article className={`row banner ${styles.postsRow}`}>
 
-          <h1>{post.title}</h1>
+        <div className={`wrapper ${styles.wrapper}`}>
 
-          <div className={styles.meta}>
+          <div className={`heading centered ${styles.heading}`}>
 
-            <div className={styles.date}>
+            <h1>{post.title}</h1>
 
-              <Calendar />
+            <div className={styles.meta}>
 
-              <span>Updated: {new Date(post.date).toLocaleDateString()}</span>
+              <div className={styles.date}>
 
-            </div> {/* .date */}
+                <Calendar />
 
-            <SocialShare url={fullUrl} title={post.title} />
+                <span>Updated: {new Date(post.date).toLocaleDateString()}</span>
 
-          </div> {/* .meta */}
+              </div> {/* .date */}
 
-          <div className={styles.image}>
+              <SocialShare url={fullUrl} title={post.title} />
 
-            {post.featuredImage && (
+            </div> {/* .meta */}
 
-              <Image
-                src={post.featuredImage.node.sourceUrl}
-                alt={post.title || "Post item"}
-                fill
-                quality={80}
-              />
+            <div className={styles.image}>
 
-            )}
+              {post.featuredImage && (
 
-          </div> {/* .image */}
+                <Image
+                  src={post.featuredImage.node.sourceUrl}
+                  alt={post.title || "Post item"}
+                  fill
+                  quality={80}
+                />
 
-        </div> {/* .heading */}
+              )}
 
-        <div className={styles.content} dangerouslySetInnerHTML={{ __html: post.content }} />
+            </div> {/* .image */}
 
-        <Link className="btn tLight" href="/modbox/news" style={{width: "100" + "%"}}>
+          </div> {/* .heading */}
 
-          <ArrowLeft />
+          <div className={styles.content} dangerouslySetInnerHTML={{ __html: post.content }} />
 
-          <span>Back to all posts</span>
+          <Link className="btn tLight" href="/modbox/news" style={{ width: "100" + "%" }}>
 
-        </Link>
+            <ArrowLeft />
 
-      </div> {/* .wrapper */}
+            <span>Back to all posts</span>
 
-    </article>
+          </Link>
+
+        </div> {/* .wrapper */}
+
+      </article>
+
+    </>
 
   );
 

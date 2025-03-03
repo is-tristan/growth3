@@ -1,8 +1,7 @@
-// styles/rows/contactCTA.module.scss
-
 .contactForm {
     max-width: 90%;
     margin-bottom: 3rem;
+    border-radius: 1.5rem;
 
     @media (min-width: 768px) {
         max-width: 75%;
@@ -11,59 +10,77 @@
     @media (min-width: 1200px) {
         max-width: 1140px;
         margin-bottom: 9rem;
-    }
-    
-    h3 {
-        font-size: 3rem;
+        border-radius: 3rem;
     }
 }
 
-.contactColWrapper {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 3rem;
-
-    @media (min-width: 1200px) {
-        flex-direction: column;
-    }
-}
-
-.contactCols {
-    display: flex;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-.contactCol,
-.formWrapper {
+.contactWrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
+    gap: 3rem;
+    padding: 5rem 1.5rem;
+
+    @media (min-width: 768px) {
+        padding: 5rem 2rem;
+    }
+
+    @media (min-width: 1200px) {
+        padding: 5rem 3rem;
+    }
+
+    @media (min-width: 1512px) {
+        padding: 5rem;
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
+// Contact Info
+.contactInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     gap: 3rem;
 }
 
-.formWrapper {
-    justify-content: center;
-    align-items: center;
-    height: auto;
-}
-
+// Items
 .contactItems {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
     gap: 2rem;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
 }
 
-.footerSocials {
-    margin-top: 1rem;
-}
-
+// Item
 .contactItem {
+    flex: 1;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
     gap: 1.5rem;
     transition: var(--ease);
+
+    @media (hover:hover) {
+        &:hover {
+            transform: translateY(-0.25rem);
+        }
+    }
 
     .icon {
         display: flex;
@@ -83,10 +100,25 @@
 
     p:not(strong),
     a {
-        font-size: 1rem;
-    }
+        font-size: 0.85rem;
 
-    @media (hover :hover) {
-        transform: translateY(-.2rem);
+        @media (min-width: 1200px) {
+            font-size: 1rem;
+        }
+    }
+}
+
+// Form
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+
+    h4 {
+        text-align: center;
     }
 }

@@ -2,8 +2,10 @@ import styles from "@/styles/pages/modbox/modbox.module.scss";
 import Image from "next/image";
 import Link from "next/link";
 import Marquee from "@/components/misc/marquee";
-import ModboxSlider from "@/components/modboxSlider/import";
+import ModboxSlider from "@/components/queries/modboxSlider/import";
 import XFeed from "@/components/misc/XFeed";
+import Header from "@/components/global/header";
+import Banner from "@/components/global/banner";
 
 // Icons
 import { ArrowUpRight } from "@carbon/icons-react";
@@ -11,9 +13,7 @@ import { Chat } from "@carbon/icons-react";
 import { Bullhorn } from "@carbon/icons-react";
 
 // Images
-import bannerBg from "@/public/backgrounds/background_sandy.webp";
 import aboutImage from "@/public/images/modbox_about.webp";
-import dotsBg from "@/public/backgrounds/background_dots.webp"
 
 export const metadata = {
     metadataBase: new URL('https://growth3.co/modbox'),
@@ -21,50 +21,30 @@ export const metadata = {
     description: "At ModBox, we provide expert community management and strategic marketing services to help Web3 projects scale effectively.",
     keywords: "web3, crypto, consultancy, modbox",
     openGraph: {
-      title: "ModBox | Growth3",
-      description: "At ModBox, we provide expert community management and strategic marketing services to help Web3 projects scale effectively.",
-      images: [
-        {
-          url: "/og.jpg",
-          width: 800,
-          height: 600,
-          alt: "Modbox Image",
-        },
-      ],
+        title: "ModBox | Growth3",
+        description: "At ModBox, we provide expert community management and strategic marketing services to help Web3 projects scale effectively.",
+        images: [
+            {
+                url: "/og.jpg",
+                width: 800,
+                height: 600,
+                alt: "Modbox Image",
+            },
+        ],
     },
-  };
+};
 
 export default function ModBox() {
 
     return (
 
-        <main id="content">
+        <>
 
-            <div id="banner"
+            <Header />
 
-                className={`row banner centered parallax ${styles.modboxBanner}`}
+            <Banner heading="ModBox at" subheading="At ModBox, we provide expert community management and strategic marketing services to help Web3 projects scale effectively." background="../backgrounds/background_sandy.webp" />
 
-                style={{
-                    backgroundImage: `url(${bannerBg.src})`,
-                }}
-
-            >
-
-                <div className={`wrapper ${styles.wrapper}`}>
-
-                    <div className="heading">
-
-                        <h1>Join a growing community of <span className="green">web<sup>3</sup> specialists</span>.</h1>
-
-                        <p>At ModBox, we provide expert community management and strategic marketing services to help Web3 projects scale effectively. </p>
-
-                    </div> {/* .heading */}
-
-                </div> {/* .wrapper */}
-
-            </div> {/* .banner */}
-
-            <div id="aboutUs" className={`row aboutRow ${styles.modboxAbout}`} style={{ backgroundImage: `url(${dotsBg.src})`, }}>
+            <div id="aboutUs" className={`row aboutRow ${styles.modboxAbout}`}>
 
                 <div className="wrapper dualCols">
 
@@ -145,7 +125,7 @@ export default function ModBox() {
 
             <XFeed />
 
-        </main>
+        </>
     )
 
 }

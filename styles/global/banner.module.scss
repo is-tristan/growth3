@@ -1,0 +1,116 @@
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1512px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+
+    @media (min-width: 768px) {
+        padding: 0 2rem;
+    }
+
+    @media (min-width: 1200px) {
+        margin: 5rem auto 0;
+        padding: 0 3rem;
+    }
+
+    @media (min-width: 1512px) {
+        padding: 0 8rem;
+    }
+
+}
+
+.bannerWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    min-height: 25rem;
+    border-radius: 2rem;
+    border: 2px solid var(--primary);
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 5rem 1.5rem;
+
+    @media (min-width: 768px) {
+        padding: 5rem 2rem;
+    }
+
+    @media (min-width: 1200px) {
+        background-size: 125%;
+        background-position: -5rem center;
+        padding: 5rem 3rem;
+    }
+
+    @media (min-width: 1512px) {
+        padding: 5rem 8rem;
+    }
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--dark);
+        opacity: 0.75;
+
+        @media (min-width: 1200px) {
+            background: linear-gradient(90deg, var(--dark) 40%, #0E141B00 60%);
+            opacity: 1;
+        }
+    }
+
+}
+
+.headingWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 1;
+
+    @media (min-width: 768px) {
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    @media (min-width: 1200px) {
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        line-height: 75%;
+
+        @media (min-width: 768px) {
+            font-size: 3rem;
+        }
+
+        @media (min-width: 1200px) {
+            font-size: 3.5rem;
+        }
+    }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 150%;
+        font-weight: 400;
+
+        @media (min-width: 1200px) {
+            max-width: 30rem;
+            font-size: 1.2rem;
+        }
+    }
+}
