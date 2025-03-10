@@ -1,0 +1,99 @@
+@mixin loadingState() {
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        opacity: 15%;
+        background: linear-gradient(90deg, var(--dark) 0%, hsl(212, 32%, 20%) 5%, var(--dark) 10%);
+        animation: loading ease-in-out 2s infinite;
+
+        @keyframes loading {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    }
+}
+
+.banner {
+    background: var(--darkAlt);
+    @include loadingState();
+
+    &:after {
+        background: linear-gradient(90deg, var(--darkAlt) 0%, hsl(212, 32%, 20%) 5%, var(--darkAlt) 10%);
+    }
+}
+
+.heading {
+    border-radius: 40rem;
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    width: 15rem;
+    background: var(--dark);
+    @include loadingState();
+
+    @media (min-width: 768px) {
+        height: 4.5rem;
+        width: 20rem;
+    }
+
+    @media (min-width: 1200px)  {
+        height: 5.5rem;
+        width: 30rem;
+    }
+
+    @media (min-width: 1500px) {
+        height: 6.5rem;
+        width: 40rem;
+    }
+}
+
+h2.heading  {
+    height: 2.25rem;
+    width: 15rem; 
+
+    @media (min-width: 768px) {
+        height: 3rem;
+        width: 20rem;
+    }
+}
+
+.textWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 35rem;
+
+    .text {
+        position: relative;
+        overflow: hidden;
+        border-radius: 40rem;
+        height: 1.66rem;
+        width: 90%;
+        background: var(--dark);
+        @include loadingState();
+
+        &:nth-child(2) {
+            width: 75%;
+        }
+
+        &:nth-child(3) {
+            width: 50%;
+        }
+    }
+}
+
+.loadingCol {
+    position: relative;
+    overflow: hidden;
+    min-height: 17.5rem;
+    @include loadingState();
+}

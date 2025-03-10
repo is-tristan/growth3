@@ -1,7 +1,7 @@
 import localFont from "next/font/local";
 import "./globals.scss";
-import TopBar from "@/components/global/topbar";
 import Footer from "@/components/global/footer";
+import ScrollFixer from "@/components/misc/scrollFixer";
 
 const prophet = localFont({
   src: "./fonts/abc-prophet-bold.woff2",
@@ -57,6 +57,8 @@ export default function RootLayout({ children }) {
       <head />
 
       <body className={`${prophet.variable} ${sora.variable}`}>
+
+        <ScrollFixer />
 
         {children}
 

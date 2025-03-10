@@ -63,8 +63,6 @@ query marketingInner($slug: String!) {
 }
 `;
 
-console.log(marketingInner);
-
 export default async function MarketingInner({ params }) {
 
     const { slug } = await params;
