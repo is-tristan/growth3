@@ -14,7 +14,7 @@
     "graphql": "^16.9.0",
     "keen-slider": "^6.8.6",
     "lottie-react": "^2.4.0",
-    "next": "^15.1.0",
+    "next": "15.1.11",
     "next-app": "^0.0.0",
     "nodemailer": "^6.9.15",
     "react": "^18",
